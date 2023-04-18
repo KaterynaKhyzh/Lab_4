@@ -49,15 +49,15 @@ namespace Lab_4
                 {
                     case "хижняк":
                         Khyzhniak_1.Task1_10(ref arr);
-                        Console.WriteLine("Поточний масив:");
+                        Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
-                    case "дробідьк":
-                        Console.WriteLine("Поточний масив:");
+                    case "дроб?дько":
+                        Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
                     case "шепетун":
-                        Console.WriteLine("Поточний масив:");
+                        Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
                     default:
@@ -66,7 +66,7 @@ namespace Lab_4
                 }
                 Console.WriteLine("\nВведіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
                 surname = Console.ReadLine().ToLower();
-                if (surname == "хижняк" || surname == "дробідьк" || surname == "шепетун")
+                if (surname == "хижняк" || surname == "дроб?дько" || surname == "шепетун")
                 {
                     Console.WriteLine("Бажаєте створити новий масив?\nтак;\nні.");
                     string answer = Console.ReadLine().ToLower();
@@ -160,15 +160,15 @@ namespace Lab_4
                 {
                     case "хижняк":
                         Khyzhniak_2.Task3_14(ref arr);
-                        Console.WriteLine("Поточний масив:");
+                        Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
-                    case "дробідьк":
-                        Console.WriteLine("Поточний масив:");
+                    case "дроб?дько":
+                        Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
                     case "шепетун":
-                        Console.WriteLine("Поточний масив:");
+                        Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
                     default:
@@ -177,7 +177,7 @@ namespace Lab_4
                 }
                 Console.WriteLine("\nВведіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
                 surname = Console.ReadLine().ToLower();
-                if (surname == "хижняк" || surname == "дробідьк" || surname == "шепетун")
+                if (surname == "хижняк" || surname == "дроб?дько" || surname == "шепетун")
                 {
                     Console.WriteLine("Бажаєте створити новий масив?\nтак;\nні.");
                     string answer = Console.ReadLine().ToLower();
@@ -212,10 +212,10 @@ namespace Lab_4
             }
             return arr;
         }
-        public static int[][] FillSeparetaly_2(int numOfElement, ref int[][] arr)
+        public static int[][] FillSeparetaly_2(int numOfRows, ref int[][] arr)
         {
             Console.WriteLine("Вводьте масив:");
-            for (int i = 0; i < numOfElement; i++)
+            for (int i = 0; i < numOfRows; i++)
             {
                 Console.Write($"Введіть кількість елементів у рядку {i}: ");
                 int cols = int.Parse(Console.ReadLine());
