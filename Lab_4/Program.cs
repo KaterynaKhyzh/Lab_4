@@ -77,7 +77,7 @@ namespace Lab_4
                         arr = new int[numOfElements];
                         CreateArr1(numOfElements, arr);
                     }
-                        
+
                 }
             } while (surname != "0");
         }
@@ -88,7 +88,7 @@ namespace Lab_4
 
             Console.WriteLine("Оберіть спосіб заповнення масиву:\n1 - вручну;\n2 - рандомом.");
             numOfFilling = int.Parse(Console.ReadLine());
-            switch(numOfFilling)
+            switch (numOfFilling)
             {
                 case 1:
                     FillSeparetaly_1(numOfElements, ref arr);
@@ -106,10 +106,12 @@ namespace Lab_4
         {
             Console.WriteLine("Вводьте масив:");
             string[] line = Console.ReadLine().Trim().Split();
+
             for (int i = 0; i < numOfElement; i++)
             {
                 arr[i] = int.Parse(line[i]);
             }
+            
             return arr;
         }
 
@@ -136,7 +138,7 @@ namespace Lab_4
 
         public static void OutputArray_1(int[] arr)
         {
-            if(arr.Length == 0)
+            if (arr.Length == 0)
             {
                 Console.WriteLine("Масив не містить жодного елементу.");
             }
@@ -148,12 +150,13 @@ namespace Lab_4
 
         public static void Block3()
         {
-            Console.WriteLine("Введіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
-            string surname = Console.ReadLine().ToLower();
+            
             Console.WriteLine("Введіть кількість рядків масиву:");
             int numOfRows = int.Parse(Console.ReadLine());
             int[][] arr = new int[numOfRows][];
             CreateArr2(numOfRows, arr);
+            Console.WriteLine("Введіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
+            string surname = Console.ReadLine().ToLower();
             do
             {
                 switch (surname)
@@ -172,7 +175,7 @@ namespace Lab_4
                         OutputArray_2(arr);
                         break;
                     default:
-                        Console.WriteLine("Студента з таким прізвищем не має, спробуйте ще раз.");
+                        Console.WriteLine("\tСтудента з таким прізвищем не існує, спробуйте ще раз.");
                         break;
                 }
                 Console.WriteLine("\nВведіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
@@ -214,23 +217,19 @@ namespace Lab_4
         }
         public static int[][] FillSeparetaly_2(int numOfRows, ref int[][] arr)
         {
-            Console.WriteLine("Вводьте масив:");
-            for (int i = 0; i < numOfRows; i++)
-            {
-                Console.Write($"Введіть кількість елементів у рядку {i}: ");
-                int cols = int.Parse(Console.ReadLine());
-
-                arr[i] = new int[cols];
-
-                for (int j = 0; j < cols; j++)
+                for (int i = 0; i < numOfRows; i++)
                 {
-                    Console.Write($"Введіть елемент у рядку {i} та стовпці {j}: ");
-                    arr[i][j] = int.Parse(Console.ReadLine());
+                    Console.Write($"Введіть кількість елементів у рядку {i}: ");
+                    int cols = int.Parse(Console.ReadLine());
+                    arr[i] = new int[cols];
+                    for (int j = 0; j < cols; j++)
+                    {
+                        Console.Write($"Введіть елемент у рядку {i} та стовпці {j}: ");
+                        arr[i][j] = int.Parse(Console.ReadLine());
+                    }
                 }
-            }
             return arr;
         }
-
         public static int[][] FillRandomly_2(int numOfRows, ref int[][] arr)
         {
             Random rd = new Random();
@@ -259,7 +258,7 @@ namespace Lab_4
             {
                 for (int j = 0; j < arr[i].Length; j++)
                 {
-                    Console.Write(arr[i][j] + " ");
+                    Console.Write(arr[i][j] + "\t");
                 }
                 Console.WriteLine();
             }

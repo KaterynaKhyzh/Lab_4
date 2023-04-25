@@ -15,7 +15,7 @@ namespace Lab_4
             int max = arr[0];
             int minIndex = 0;
             int maxIndex = 0;
-           
+
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] < min)
@@ -42,15 +42,15 @@ namespace Lab_4
             int firstIndex = Math.Min(minIndex, maxIndex);
             int lastIndex = Math.Max(minIndex, maxIndex);
 
-            
-            int newLength = arr.Length - (lastIndex - (firstIndex - 1));
+
+            int newLength = arr.Length - (lastIndex - firstIndex - 1);
 
             int[] newArr = new int[newLength];
 
             int index = 0;
             for (int i = 0; i < arr.Length; i++)
             {
-                if (i == minIndex || i == maxIndex || ((i > firstIndex) && (i < lastIndex)))
+                if ((i > firstIndex) && (i < lastIndex))
                 {
                     continue;
                 }
@@ -78,7 +78,52 @@ namespace Lab_4
         public static void Task3_14(ref int[][] arr)
         {
             Console.WriteLine("\nДодати рядок перед рядком, що містить мінімальний елемент (якщо у різних місцях є кілька елементів\r\nз однаковим мінімальним значенням, то брати перший з них)");
-            
+            int minElement = arr[0][0];
+            int minIndex = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i].Length; j++)
+                {
+                    if (arr[i][j] < minElement)
+                    {
+                        minElement = arr[i][j];
+                        minIndex = i;
+                    }
+                }
+            }
+            Console.WriteLine("Мінімальний елемент:" + minElement);
+            int[] newRow = new int[] {2,0,2,3};
+            int[][] newArr = new int[arr.Length + 1][];
+            for(int i = 0; i < newArr.Length; i++)
+            {
+                if(i < minIndex)
+                {
+                    newArr[i] = arr[i];
+                }else if(i == minIndex)
+                {
+                    newArr[i] = newRow;
+                }else
+                {
+                    newArr[i] = arr[i-1];
+                }
+
+            }
+
+            arr = newArr;
+            PrintMass(arr);
+        }
+
+        public static void PrintMass(int[][] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i].Length; j++)
+                {
+                    Console.Write(arr[i][j] + "\t");
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
