@@ -56,7 +56,7 @@ namespace Lab_4
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
-                    case "шепетун":
+                    case "андрiйченко":
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
