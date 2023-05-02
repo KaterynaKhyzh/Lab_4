@@ -56,7 +56,7 @@ namespace Lab_4
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
-                    case "андрiйченко":
+                    case "андр?йченко":
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
@@ -66,7 +66,7 @@ namespace Lab_4
                 }
                 Console.WriteLine("\nВведіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
                 surname = Console.ReadLine().ToLower();
-                if (surname == "хижняк" || surname == "дроб?дько" || surname == "шепетун")
+                if (surname == "хижняк" || surname == "дроб?дько" || surname == "андр?йченко")
                 {
                     Console.WriteLine("Бажаєте створити новий масив?\nтак;\nні.");
                     string answer = Console.ReadLine().ToLower();
@@ -170,7 +170,7 @@ namespace Lab_4
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
-                    case "шепетун":
+                    case "андр?йченко":
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
@@ -180,7 +180,7 @@ namespace Lab_4
                 }
                 Console.WriteLine("\nВведіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
                 surname = Console.ReadLine().ToLower();
-                if (surname == "хижняк" || surname == "дроб?дько" || surname == "шепетун")
+                if (surname == "хижняк" || surname == "дроб?дько" || surname == "андр?йченко")
                 {
                     Console.WriteLine("Бажаєте створити новий масив?\nтак;\nні.");
                     string answer = Console.ReadLine().ToLower();
@@ -217,17 +217,16 @@ namespace Lab_4
         }
         public static int[][] FillSeparetaly_2(int numOfRows, ref int[][] arr)
         {
-                for (int i = 0; i < numOfRows; i++)
+            Console.WriteLine("Вводьте масив:");
+            for (int i = 0; i < numOfRows; i++)
+            {
+                string[] rowOfArray = Console.ReadLine().Trim().Split();
+                arr[i] = new int[rowOfArray.Length];
+                for (int j = 0; j < rowOfArray.Length; j++)
                 {
-                    Console.Write($"Введіть кількість елементів у рядку {i}: ");
-                    int cols = int.Parse(Console.ReadLine());
-                    arr[i] = new int[cols];
-                    for (int j = 0; j < cols; j++)
-                    {
-                        Console.Write($"Введіть елемент у рядку {i} та стовпці {j}: ");
-                        arr[i][j] = int.Parse(Console.ReadLine());
-                    }
+                    arr[i][j] = Convert.ToInt32(rowOfArray[j]);
                 }
+            }
             return arr;
         }
         public static int[][] FillRandomly_2(int numOfRows, ref int[][] arr)
