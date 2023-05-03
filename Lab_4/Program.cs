@@ -53,6 +53,7 @@ namespace Lab_4
                         OutputArray_1(arr);
                         break;
                     case "дроб?дько":
+                        Drobidko_1.Task1_5(ref arr);
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
@@ -168,6 +169,7 @@ namespace Lab_4
                         OutputArray_2(arr);
                         break;
                     case "дроб?дько":
+                        Drobidko_2.Task3_11(ref arr);
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
