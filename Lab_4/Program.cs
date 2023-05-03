@@ -22,7 +22,7 @@ namespace Lab_4
                         break;
                     case 1:
                         Block1();
-                        break;
+                       break;
                     case 3:
                         Block3();
                         break;
@@ -57,11 +57,12 @@ namespace Lab_4
                         OutputArray_1(arr);
                         break;
                     case "андр?йченко":
+                        Andriychenko_1.Block1(ref arr);
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_1(arr);
                         break;
                     default:
-                        Console.WriteLine("Студента з таким прізвищем не має, спробуйте ще раз.");
+                        Console.WriteLine("Студента з таким прізвищем немає, спробуйте ще раз.");
                         break;
                 }
                 Console.WriteLine("\nВведіть прізвище студента варіант якого бажаєте виконати.\n(Для завершення виконання варіанту натисніть 0)");
@@ -171,6 +172,7 @@ namespace Lab_4
                         OutputArray_2(arr);
                         break;
                     case "андр?йченко":
+                        Andriychenko_2.Block3(ref arr);
                         Console.WriteLine("\nПоточний масив:");
                         OutputArray_2(arr);
                         break;
